@@ -10,7 +10,12 @@ public class Employee {
 	private String Poste;
 	
 	public Employee(String Nom, String Email, String Numéro, String Département, String Poste) {
-		// TODO Auto-generated constructor stub
+		
+		 this.Nom = Nom;
+	        this.Email = Email;
+	        this.Numéro = Numéro;
+	        this.Département = Département;
+	        this.Poste = Poste;
 	}
 	public String getNom() {
 		return Nom;

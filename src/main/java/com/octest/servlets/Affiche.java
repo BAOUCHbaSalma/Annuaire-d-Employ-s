@@ -2,6 +2,7 @@ package com.octest.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,16 +39,27 @@ public class Affiche extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Employee> List_Emp=new ArrayList<>();
-		
-	     String Nom = request.getParameter("nom");
-	     String Email = request.getParameter("Email");
-	     String Numéro = request.getParameter("Numero");
-	     String Département = request.getParameter("Département");
-	     String Poste = request.getParameter("Poste");
-	     Employee Emp=new Employee(Nom,Email,Numéro,Département,Poste);
-	     List_Emp.add(Emp);
-	     request.setAttribute("Employees",List_Emp);
+		  HttpSession session = request.getSession();
+		  
+		  ArrayList<Employee> listEmp = (ArrayList<Employee>) session.getAttribute("listEmp");
+		  
+		  if (listEmp == null) {
+		      listEmp = new ArrayList<>();
+		  }
+		  
+		    String Nom = request.getParameter("Nom");
+		    String Email = request.getParameter("Email");
+		    String Numéro = request.getParameter("Numéro");
+		    String Département = request.getParameter("Département");
+		    String Poste = request.getParameter("Poste");
+		    
+		    Employee emp = new Employee(Nom, Email, Numéro, Département, Poste);
+		    listEmp.add(emp);
+	     
+	   
+
+	     session.setAttribute("listEmp",listEmp);
+	       
 	     
 	
 	     

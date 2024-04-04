@@ -9,6 +9,7 @@
     <h1>Liste des Employés</h1>
     
     
+
         <table border="1">
             <tr>
                 <th>Nom</th>
@@ -17,20 +18,22 @@
                 <th>Département</th>
                 <th>Poste</th>
             </tr>
-              <c:forEach items="${Employees}" var="Employee">
-                <tr>
+            
+            <c:forEach var="employee" items="${sessionScope.listEmp}">
+				    <tr>
+				        <td>${employee.getNom()}</td>
+				        <td>${employee.getEmail()}</td>
+				        <td>${employee.getNuméro()}</td>
+				        <td>${employee.getDépartement()}</td>
+				        <td>${employee.getPoste()}</td>
+				    </tr>
+			</c:forEach>
+
               
-                    <td>${Employee.Nom}</td>
-                    <td>{Employee.Email}</td>
-                    <td>{Employee.Numéro}</td>
-                    <td>{Employee.Département}</td>
-                    <td>{Employee.Poste}</td>
-                     
-                </tr>
-                 </c:forEach>
              
            
         </table>
+        <button><a href="/Gestion_Employee/">AJOUTER</a></button>
     
     
    

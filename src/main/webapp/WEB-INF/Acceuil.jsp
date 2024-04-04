@@ -12,8 +12,8 @@
  <form method="post" action="A">
 	 <p>
 	 
-	       <label for="nom">Nom : </label>
-            <input type="text" name="nom" id="nom" />
+	       <label for="Nom">Nom : </label>
+            <input type="text" name="Nom" id="Nom" />
 	 
 	 </p>
 	 
