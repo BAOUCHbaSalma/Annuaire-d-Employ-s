@@ -15,6 +15,7 @@
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
+                   <th scope="col">Id</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Email</th>
                     <th scope="col">Numéro</th>
@@ -26,6 +27,7 @@
             <tbody>
                 <c:forEach var="employee" items="${sessionScope.listEmp}">
                     <tr>
+                       <td>${employee.getId()}</td>
                         <td>${employee.getNom()}</td>
                         <td>${employee.getEmail()}</td>
                         <td>${employee.getNuméro()}</td>
@@ -33,7 +35,7 @@
                         <td>${employee.getPoste()}</td>
                         <td>
                             <a href="#" class="btn btn-primary btn-sm">Modifier</a>
-                            <a href="#" class="btn btn-danger btn-sm">Supprimer</a>
+                            <a href="/Gestion_Employee/Supprimer?id=${employee.getId()}" class="btn btn-danger btn-sm">Supprimer</a>
                         </td>
                     </tr>
                 </c:forEach>

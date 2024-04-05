@@ -46,14 +46,14 @@ public class Affiche extends HttpServlet {
 		  if (listEmp == null) {
 		      listEmp = new ArrayList<>();
 		  }
-		  
+		  String Id = request.getParameter("Id");
 		    String Nom = request.getParameter("Nom");
 		    String Email = request.getParameter("Email");
 		    String Numéro = request.getParameter("Numéro");
 		    String Département = request.getParameter("Département");
 		    String Poste = request.getParameter("Poste");
 		    
-		    Employee emp = new Employee(Nom, Email, Numéro, Département, Poste);
+		    Employee emp = new Employee(Id,Nom, Email, Numéro, Département, Poste);
 		    listEmp.add(emp);
 	     
 	   

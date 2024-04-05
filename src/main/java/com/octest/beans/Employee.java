@@ -2,6 +2,7 @@ package com.octest.beans;
 
 
 public class Employee {
+	private String Id;
 	
 	private String Nom;
 	private String Email;
@@ -9,13 +10,20 @@ public class Employee {
 	private String Département;
 	private String Poste;
 	
-	public Employee(String Nom, String Email, String Numéro, String Département, String Poste) {
-		
-		 this.Nom = Nom;
+	public Employee(String Id,String Nom, String Email, String Numéro, String Département, String Poste) {
+		   this.Id=Id;
+		    this.Nom = Nom;
 	        this.Email = Email;
 	        this.Numéro = Numéro;
 	        this.Département = Département;
 	        this.Poste = Poste;
+	}
+	
+	public String getId() {
+		return Id;
+	}
+	public void setId(String id) {
+		Id = id;
 	}
 	public String getNom() {
 		return Nom;

@@ -10,6 +10,13 @@
 <p> Ajouter un employee</p>
 
  <form method="post" action="A">
+ 
+  <p>
+	 
+	       <label for="Id">Id : </label>
+            <input type="Number" name="Id" id="Id" />
+	 
+	 </p>
 	 <p>
 	 
 	       <label for="Nom">Nom : </label>
