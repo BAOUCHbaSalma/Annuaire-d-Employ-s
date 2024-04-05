@@ -1,6 +1,7 @@
 package com.octest.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -30,30 +31,21 @@ public class Supprimer extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		  
 	     String Id = request.getParameter("Id");
+	   
+	     
+	     Affiche.listEmp.removeIf(emp -> emp.getId().equals(Id));
 
-	       
-	        HttpSession session = request.getSession();
-	        List<Employee> listEmp = (List<Employee>) session.getAttribute("listEmp");
+	 	 request.setAttribute("listEmp",Affiche.listEmp);
+	 	 this.getServletContext().getRequestDispatcher("/WEB-INF/Affiche.jsp").forward(request, response);
 
-	        if (Id != null) {
-	            supprimerEmploye(listEmp, Id);
-	        }
-
-	        
-	        response.sendRedirect("Affiche.jsp");
 	    }
 
-	    private void supprimerEmploye(List<Employee> listEmp, String Id) {
-	        for (Employee emp : listEmp) {
-	            if (emp.getId().equals(Id)) {
-	                listEmp.remove(emp);
-	                break;
-	            }
-	        }
-	    }
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

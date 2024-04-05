@@ -38,33 +38,34 @@ public class Affiche extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	public static ArrayList<Employee> listEmp = new ArrayList<>();
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  HttpSession session = request.getSession();
-		  
-		  ArrayList<Employee> listEmp = (ArrayList<Employee>) session.getAttribute("listEmp");
-		  
-		  if (listEmp == null) {
-		      listEmp = new ArrayList<>();
-		  }
+		 
+		  		  
+		
 		  String Id = request.getParameter("Id");
-		    String Nom = request.getParameter("Nom");
-		    String Email = request.getParameter("Email");
-		    String Numéro = request.getParameter("Numéro");
-		    String Département = request.getParameter("Département");
-		    String Poste = request.getParameter("Poste");
-		    
-		    Employee emp = new Employee(Id,Nom, Email, Numéro, Département, Poste);
-		    listEmp.add(emp);
-	     
-	   
+		  
+		  if(listEmp.stream().anyMatch(emp -> emp.getId().equals(Id))) {
+			  
+		  }
+		  else {
+			    String Nom = request.getParameter("Nom");
+			    String Email = request.getParameter("Email");
+			    String Numéro = request.getParameter("Numéro");
+			    String Département = request.getParameter("Département");
+			    String Poste = request.getParameter("Poste");
+			    
+			    Employee emp = new Employee(Id,Nom, Email, Numéro, Département, Poste);
+			    listEmp.add(emp);		     
+		   
 
-	     session.setAttribute("listEmp",listEmp);
-	       
+		     request.setAttribute("listEmp",listEmp);
+		  }
+		  
+
 	     
-	
-	     
-	     
-	        this.getServletContext().getRequestDispatcher("/WEB-INF/Affiche.jsp").forward(request, response);
+	      this.getServletContext().getRequestDispatcher("/WEB-INF/Affiche.jsp").forward(request, response);
+		 // this.getServletContext().getRequestDispatcher("/com.octest.servlets/Supprimer.java").forward(request, response);
 	}
 
 }
