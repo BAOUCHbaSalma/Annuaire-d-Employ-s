@@ -21,4 +21,13 @@
   </servlet-mapping>
  
  
+ <servlet>
+     <servlet-name>Modifier</servlet-name>
+    <servlet-class>com.octest.servlets.Modifier</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Modifier</servlet-name>
+    <url-pattern>/M</url-pattern>
+  </servlet-mapping>
+ 
 </web-app>

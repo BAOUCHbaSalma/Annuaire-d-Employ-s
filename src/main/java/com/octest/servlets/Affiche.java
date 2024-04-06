@@ -65,7 +65,7 @@ public class Affiche extends HttpServlet {
 
 	     
 	      this.getServletContext().getRequestDispatcher("/WEB-INF/Affiche.jsp").forward(request, response);
-		 // this.getServletContext().getRequestDispatcher("/com.octest.servlets/Supprimer.java").forward(request, response);
+		 
 	}
 
 }
