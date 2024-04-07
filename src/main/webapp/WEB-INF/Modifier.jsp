@@ -1,63 +1,45 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modifier un employé</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+<div class="container">
+    <h1 class="mt-5">Modifier un employé</h1>
+    <form method="post" action="M">
+        <div class="form-group">
+            <label for="Id">Id :</label>
+            <input type="number" class="form-control" id="Id" name="Id" value="${employeeToModify.getId()}">
+        </div>
+        <div class="form-group">
+            <label for="newNom">Nom :</label>
+            <input type="text" class="form-control" id="Nom" name="newNom" value="${employeeToModify.getNom()}">
+        </div>
+        <div class="form-group">
+            <label for="newEmail">Email :</label>
+            <input type="text" class="form-control" id="Email" name="newEmail" value="${employeeToModify.getEmail()}">
+        </div>
+        <div class="form-group">
+            <label for="newNumero">Numéro :</label>
+            <input type="number" class="form-control" id="Numéro" name="newNumero" value="${employeeToModify.getNuméro()}">
+        </div>
+        <div class="form-group">
+            <label for="newDepartement">Département :</label>
+            <input type="text" class="form-control" id="Département" name="newDepartement" value="${employeeToModify.getDépartement()}">
+        </div>
+        <div class="form-group">
+            <label for="newPoste">Poste :</label>
+            <input type="text" class="form-control" id="Poste" name="newPoste" value="${employeeToModify.getPoste()}">
+        </div>
+        <button type="submit" class="btn btn-primary">Modifier</button>
+    </form>
+</div>
 
-
-<p> Modifier un employee</p>
-
- <form method="post" action="A">
- 
-  <p>
-	 
-	      <label for="Id">Id :</label>
-          <input type="number" name="Id" id="Id" value="${employeeToModify.getId()}"  />
-	 
-	 </p>
-	 <p>
-	 
-	       <label for="newNom">Nom : </label>
-            <input type="text" name="newNom" id="Nom" value="${employeeToModify.getNom()}"/>
-	 
-	 </p>
-	 
-	  <p>
-	 
-	       <label for="newEmail">Email : </label>
-            <input type="text" name="newEmail" id="Email" value="${employeeToModify.getEmail()}" />
-	 
-	 </p>
-	 
-	  <p>
-	 
-	       <label for="newNuméro">Numéro : </label>
-            <input type="Number" name="newNuméro" id="Numéro" value="${employeeToModify.getNuméro()}"/>
-	 
-	 </p>
-	 
-	  <p>
-	 
-	       <label for="newDépartement">Département: </label>
-            <input type="text" name="newDépartement" id="Département" value="${employeeToModify.getDépartement()}" />
-	 
-	 </p>
-	 
-	   <p>
-	 
-	       <label for="newPoste">Poste: </label>
-            <input type="text" name="newPoste" id="Poste" value="${employeeToModify.getPoste()}"/>
-	 
-	 </p>
-         
-            
-            <input type="submit" value="Modifier"/>
-        </form>
-
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,60 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajouter un employÃ©</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<p> Ajouter un employee</p>
-
- <form method="post" action="A">
- 
-  <p>
-	 
-	       <label for="Id">Id : </label>
-            <input type="Number" name="Id" id="Id" />
-	 
-	 </p>
-	 <p>
-	 
-	       <label for="Nom">Nom : </label>
-            <input type="text" name="Nom" id="Nom" />
-	 
-	 </p>
-	 
-	  <p>
-	 
-	       <label for="Email">Email : </label>
-            <input type="text" name="Email" id="Email" />
-	 
-	 </p>
-	 
-	  <p>
-	 
-	       <label for="Numéro">Numéro : </label>
-            <input type="Number" name="Numéro" id="Numéro" />
-	 
-	 </p>
-	 
-	  <p>
-	 
-	       <label for="Département">Département: </label>
-            <input type="text" name="Département" id="Département" />
-	 
-	 </p>
-	 
-	   <p>
-	 
-	       <label for="Poste">Poste: </label>
-            <input type="text" name="Poste" id="Poste" />
-	 
-	 </p>
-         
-            
-            <input type="submit" />
-        </form>
-
+<div class="container">
+    <h1 class="mt-5">Ajouter un employÃ©</h1>
+    <form method="post" action="A">
+        <div class="form-group">
+            <label for="Id">Id :</label>
+            <input type="number" class="form-control" id="Id" name="Id">
+        </div>
+        <div class="form-group">
+            <label for="Nom">Nom :</label>
+            <input type="text" class="form-control" id="Nom" name="Nom">
+        </div>
+        <div class="form-group">
+            <label for="Email">Email :</label>
+            <input type="text" class="form-control" id="Email" name="Email">
+        </div>
+        <div class="form-group">
+            <label for="NumÃ©ro">NumÃ©ro :</label>
+            <input type="number" class="form-control" name="Numero">
+        </div>
+        <div class="form-group">
+            <label for="DÃ©partement">DÃ©partement :</label>
+            <input type="text" class="form-control"  name="Departement">
+        </div>
+        <div class="form-group">
+            <label for="Poste">Poste :</label>
+            <input type="text" class="form-control" id="Poste" name="Poste">
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -33,18 +33,18 @@ public class Modifier extends HttpServlet {
     	
         String Id = request.getParameter("Id");
   
-        Employee employeeToModify = null;
+        
 
         	    for (Employee empl : Affiche.listEmp) {
         	        if (empl.getId().equals(Id)) {
-        	            employeeToModify = empl;
+        	        	request.setAttribute("employeeToModify", empl);
         	           
         	        }
         	    }
         	    
         	
         	   
-        	        request.setAttribute("employeeToModify", employeeToModify);
+        	        
         	        this.getServletContext().getRequestDispatcher("/WEB-INF/Modifier.jsp").forward(request, response);
         	   
     }
@@ -52,35 +52,37 @@ public class Modifier extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	 String Id = request.getParameter("Id");
-    	    Employee employeeToModify = null;
+    	    String Id = request.getParameter("Id");
+    	    String newNom = request.getParameter("newNom");
+		    String newEmail = request.getParameter("newEmail");
+		    String newNuméro = request.getParameter("newNumero");
+		    String newDépartement = request.getParameter("newDepartement");
+		    String newPoste = request.getParameter("newPoste");
+		   
+    	  
 
     	    
     	    for (Employee emp : Affiche.listEmp) {
     	        if (emp.getId().equals(Id)) {
-    	            employeeToModify = emp;
-    	            break;
+    	           
+    	        	 emp.setNom(newNom);
+    	    	        emp.setEmail(newEmail);
+    	    	        emp.setNuméro(newNuméro);
+    	    	        emp.setDépartement(newDépartement);
+    	    	        emp.setPoste(newPoste);
     	        }
     	    }
 
-    	    if (employeeToModify != null) {
-    	    	 String newNom = request.getParameter("newNom");
-   			    String newEmail = request.getParameter("newEmail");
-   			    String newNuméro = request.getParameter("newNuméro");
-   			    String newDépartement = request.getParameter("newDépartement");
-   			    String newPoste = request.getParameter("newPoste");
+    	
+    	    
    			    
     	       
-    	        employeeToModify.setNom(newNom);
-    	        employeeToModify.setEmail(newEmail);
-    	        employeeToModify.setNuméro(newNuméro);
-    	        employeeToModify.setDépartement(newDépartement);
-    	        employeeToModify.setPoste(newPoste);
+    	       
 
    
     	        request.setAttribute("listEmp", Affiche.listEmp);
     	 
-    	    } 
+    	    
     	    this.getServletContext().getRequestDispatcher("/WEB-INF/Affiche.jsp").forward(request, response);
     }
    

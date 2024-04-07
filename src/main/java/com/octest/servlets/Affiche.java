@@ -51,8 +51,8 @@ public class Affiche extends HttpServlet {
 		  else {
 			    String Nom = request.getParameter("Nom");
 			    String Email = request.getParameter("Email");
-			    String Numéro = request.getParameter("Numéro");
-			    String Département = request.getParameter("Département");
+			    String Numéro = request.getParameter("Numero");
+			    String Département = request.getParameter("Departement");
 			    String Poste = request.getParameter("Poste");
 			    
 			    Employee emp = new Employee(Id,Nom, Email, Numéro, Département, Poste);
