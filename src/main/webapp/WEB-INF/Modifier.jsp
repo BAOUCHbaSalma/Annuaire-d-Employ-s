@@ -14,7 +14,7 @@
     <form method="post" action="M">
         <div class="form-group">
             <label for="Id">Id :</label>
-            <input type="number" class="form-control" id="Id" name="Id" value="${employeeToModify.getId()}">
+            <input type="number" class="form-control" id="Id" name="Id" value="${employeeToModify.getId()}" readonly>
         </div>
         <div class="form-group">
             <label for="newNom">Nom :</label>
